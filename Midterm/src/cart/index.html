@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <!--Flow bite-->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+   <!--Google Font-->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+   <link href="../output.css" rel="stylesheet">
+</head>
+<body class="bg-slate-50">
+        <!--Nav Menu-->
+        <nav class="fixed top-0 w-full bg-white border-gray-200 mb-16">
+            <div class="flex flex-wrap items-center justify-between mx-auto p-3">
+                <div class="px-2 flex flex-row gap-4">
+                    <a href="" class="flex items-center bg__oranage px-1.5 py-1 rounded-xl">
+                        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Pet Shop</span>
+                    </a>
+                    <div class="max-[768px]:hidden">
+                        <div class="flex flex-row gap-3 py-2 text-lg">
+                            <a href="../" class="hover:underline font-semibold">Home</a>
+                            <a href="../catalog/" class="font-semibold font__orange underline">Cattalog</a>
+                        </div>
+                    </div>
+                </div>
+                <!--Menu for Mobile-->
+                <div class="flex md:order-2">
+                    <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="md:hidden text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 rounded-lg text-sm p-2.5 me-1">
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                        </svg>
+                        <span class="sr-only">Search</span>
+                    </button>
+                    <div class="relative hidden md:block">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                            </svg>
+                            <span class="sr-only">Search icon</span>
+                        </div>
+                        <input type="text" id="search-input" class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" placeholder="Search">
+                    </div>
+                    <button data-collapse-toggle="navbar-search" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-search" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                        </svg>
+                    </button>
+                </div>
+                <!--Search and menu-->
+                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-2" id="navbar-search">
+                    <div class="relative mt-3 md:hidden ">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                            </svg>
+                        </div>
+                        <input type="text" id="search-navbar" class="search-input w-full px-2 ps-10 rounded-xl border" placeholder="Search">
+                    </div>
+                    <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
+                        <li>
+                            <a href="../" class="md:hidden block py-2 px-3 text-gray-900 rounded md:bg-transparent" aria-current="page">Home</a>
+                        </li>
+                        <li>
+                            <a href="../catalog/" class="md:hidden block py-2 px-3 text-gray-900 rounded md:bg-transparent">Cattalog</a>
+                        </li>
+                        <li>
+                            <a href="#" class="inline-block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">
+                                <svg class="w-[36px] h-[36px] text-gray-800 inline-block" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-width="2" d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+                                </svg> 
+                                <span class="hover:underline hover:text-gray-700">User</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../cart/" class="block py-2 px-3 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0">
+                                <svg class="w-[36px] h-[36px] text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    <!--Navigation Bar-->
+        <span>
+            <div class="flex flex-row px-6 mt-4 pt-16">
+                <a href="../" class="prompt-light hover:underline">Main page</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 inline-block">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>
+                <a href="" class="prompt-light underline">Cart</a> 
+            </div>
+        </span>
+    <div class="container">
+        <div class="hidden md:grid md:grid-cols-12 prompt-light text-lg p-2 justify-center justify-items-center">
+            <div class="col-span-2">
+            </div>
+            <div class="col-span-2">
+            </div>
+            <div class="col-span-2">
+                <p class="font-semibold">สินค้า</p>
+            </div>
+            <div class="col-span-2">
+                <p class="font-semibold">ราคา</p>
+            </div>
+            <div class="col-span-2">
+                <p class="font-semibold">จำนวน</p>
+            </div>
+            <div class="col-span-2">
+                <p class="font-semibold">ยอดรวม</p>
+            </div>
+        </div>
+        <!--สินค้าในตะกล้า-->
+        <div id="cartItems"></div>
+
+        <!--ยอดรวม-->
+        <div class="grid md:grid-cols-12 pt-8 prompt-light mb-8">
+            <div class="col-span-6"></div>
+            <div class="col-span-6">
+                <div class="grid grid-rows-3">
+                    <div class="total_price">
+                        <p class="text-3xl font-light">ยอดรวม</p>
+                    </div>
+                    <div class="grid grid-cols-6 pb-4">
+                        <div class="px-4 py-4 col-span-2 font-normal my-auto text-lg bg-gray-100">ยอดรวม</div>
+                        <div class="px-4 py-4 col-span-4 font-normal my-auto text-lg bg-gray-100"><div id="totalPrice" class="total-price"></div></div>
+                    </div>
+                    <div class="grid grid-cols-6 justify-center">
+                        <button onclick="changepage()" class="col-span-6 text-lg bg__oranage text-white hover:bg-amber-500">ดำเนินการซื้อ</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+
+    <!--<button onclick="removeAllFromCart()">Remove All</button>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
+    <script src="app.js"></script>
+</body>
+</html>

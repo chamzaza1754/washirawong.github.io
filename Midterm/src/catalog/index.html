@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!--Flow bite-->
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+     <!--Google Font-->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+     <link href="../output.css" rel="stylesheet">
+</head>
+<body class="bg-slate-50">
+    <!--Nav Menu-->
+    <nav class="fixed top-0 w-full bg-white border-gray-200 mb-16">
+        <div class="flex flex-wrap items-center justify-between mx-auto p-3">
+            <div class="px-2 flex flex-row gap-4">
+                <a href="" class="flex items-center bg__oranage px-1.5 py-1 rounded-xl">
+                    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Pet Shop</span>
+                </a>
+                <div class="max-[768px]:hidden">
+                    <div class="flex flex-row gap-3 py-2 text-lg">
+                        <a href="../" class="hover:underline font-semibold">Home</a>
+                        <a href="" class="font-semibold font__orange underline">Cattalog</a>
+                    </div>
+                </div>
+            </div>
+            <!--Menu for Mobile-->
+            <div class="flex md:order-2">
+                <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="md:hidden text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 rounded-lg text-sm p-2.5 me-1">
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                    </svg>
+                    <span class="sr-only">Search</span>
+                </button>
+                <div class="relative hidden md:block">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                        </svg>
+                        <span class="sr-only">Search icon</span>
+                    </div>
+                    <input type="text" id="search-input" class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" placeholder="Search">
+                </div>
+                <button data-collapse-toggle="navbar-search" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-search" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                    </svg>
+                </button>
+            </div>
+            <!--Search and menu-->
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-2" id="navbar-search">
+                <div class="relative mt-3 md:hidden ">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                        </svg>
+                    </div>
+                    <input type="text" id="search-navbar" class="search-input w-full px-2 ps-10 rounded-xl border" placeholder="Search">
+                </div>
+                <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
+                    <li>
+                        <a href="#" class="md:hidden block py-2 px-3 text-gray-900 rounded md:bg-transparent" aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <a href="#" class="md:hidden block py-2 px-3 text-gray-900 rounded md:bg-transparent">Cattalog</a>
+                    </li>
+                    <li>
+                        <a href="#" class="inline-block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">
+                            <svg class="w-[36px] h-[36px] text-gray-800 inline-block" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-width="2" d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+                            </svg> 
+                            <span class="hover:underline hover:text-gray-700">User</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../cart/" class="block py-2 px-3 text-gray-900 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0">
+                            <svg class="w-[36px] h-[36px] text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<!--Navigation Bar-->
+    <span>
+        <div class="flex flex-row px-6 mt-4 pt-16">
+            <a href="../" class="prompt-light hover:underline">Main page</a>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 inline-block">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+            <a href="" class="prompt-light underline">Catalog</a> 
+        </div>
+    </span>
+
+<!--Head Catalog-->
+    <div class="flex flex-row">
+        <p class="prompt-light text-5xl mt-2 mx-4 mb-10">Catalog</p>
+    </div>
+
+<!--Product list-->
+<div class="product__container mx-16">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 justify-center py-4 gap-4">
+        <div class="product col-span-1 justify-items-center mx-auto"  data-name="อาหารแมวโต ที่ต้องการดูแลปัญหาก้อนขน ชนิดเม็ด (HAIRBALL CARE) 4KG." data-price="1,379 บาท">
+            <div class="box prompt-light rounded-xl">
+                <div class="flex flex-row justify-center">
+                    <div class="img">                    
+                        <img src="../img/hairball.jpg" alt="Product 2" class="m-auto">
+                    </div>
+                </div>
+                <div class="product_name">
+                    <h3 class="prompt-light px-2 text-center" >อาหารแมวโต ที่ต้องการดูแลปัญหาก้อนขน ชนิดเม็ด (HAIRBALL CARE) 4KG.</h3>
+                </div>
+                <p class="prompt-light text-xl align-middle text-center">1,379 บาท</p>
+                <!--button cart and detail-->
+                <div class="flex flex-row gap-8 justify-center flex-wrap pb-4">
+                    <a onclick="addToCart('อาหารแมวโต ที่ต้องการดูแลปัญหาก้อนขน ชนิดเม็ด (HAIRBALL CARE) 4KG.', 1379, '../img/hairball.jpg')" class="box-button m-2 p-4 rounded-full border-2 hover:cursor-pointer">
+                        <span class="svg-container">
+                            <svg class="w-[24px] h-[24px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4m3-2 .917 11.923A1 1 0 0 1 17.92 21H6.08a1 1 0 0 1-.997-1.077L6 8h12Z"/>
+                              </svg>
+                        </span>
+                    </a>
+
+                    <div class="my-auto">
+                        <span class="prompt-light text-xl">                        
+                            <a onclick="sendToProduct('อาหารแมวโต ที่ต้องการดูแลปัญหาก้อนขน ชนิดเม็ด (HAIRBALL CARE) 4KG.', 1379, '../img/hairball.jpg')" class="btn_detail hover:underline hover:cursor-pointer hover:text-red-500 duration-300 pr-">ดูสินค้า
+                                <svg class="w-[24px] h-[24px] inline-block svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+                                  </svg>
+                            </a>
+                        </span>
+                    </div>            
+                </div>
+            </div>
+        </div>
+
+        <div class="product col-span-1 justify-items-center mx-auto" data-name="อาหารแมวโตเลี้ยงปล่อย รูปร่างดี อายุ 1 ปีขึ้นไป ชนิดเม็ด (FIT) 4KG." data-price="899">
+            <div class="box prompt-light rounded-xl" >
+                <div class="flex flex-row justify-center">
+                    <div class="img">                    
+                        <img src="../img/Fit.jpg" alt="Product 2" class="m-auto">
+                    </div>
+                </div>
+                <div class="product_name" >
+                    <h3 class="prompt-light px-2 text-center">อาหารแมวโตเลี้ยงปล่อย รูปร่างดี อายุ 1 ปีขึ้นไป ชนิดเม็ด (FIT) 4KG.</h3>
+                </div>
+                <p class="prompt-light text-xl align-middle text-center">899 บาท</p>
+                <!--button cart and detail-->
+                <div class="flex flex-row gap-8 justify-center flex-wrap pb-4">
+                    <a onclick="addToCart('อาหารแมวโตเลี้ยงปล่อย รูปร่างดี อายุ 1 ปีขึ้นไป ชนิดเม็ด (FIT) 4KG.', 899, '../img/Fit.jpg')" class="box-button m-2 p-4 rounded-full border-2 hover:cursor-pointer">
+                        <span class="svg-container">
+                            <svg class="w-[24px] h-[24px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4m3-2 .917 11.923A1 1 0 0 1 17.92 21H6.08a1 1 0 0 1-.997-1.077L6 8h12Z"/>
+                              </svg>
+                        </span>
+                    </a>
+
+                    <div class="my-auto">
+                        <span class="prompt-light text-xl">                        
+                            <a onclick="sendToProduct('อาหารแมวโตเลี้ยงปล่อย รูปร่างดี อายุ 1 ปีขึ้นไป ชนิดเม็ด (FIT) 4KG.', 899, '../img/Fit.jpg')" class="btn_detail hover:underline hover:cursor-pointer hover:text-red-500 duration-300 pr-">ดูสินค้า
+                                <svg class="w-[24px] h-[24px] inline-block svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+                                  </svg>
+                            </a>
+                        </span>
+                    </div>            
+                </div>
+            </div>
+        </div>
+
+        <div class="product col-span-1 justify-items-center mx-auto" data-name="อาหารแมวโตเลี้ยงในบ้าน ชนิดเม็ด (INDOOR) 4KG."  data-price="1199">
+            <div class="box prompt-light rounded-xl">
+                <div class="flex flex-row justify-center">
+                    <div class="img">                    
+                        <img src="../img/indoor.jpg" alt="Product 2" class="m-auto">
+                    </div>
+                </div>
+                <div class="product_name">
+                    <h3 class="prompt-light px-2 text-center">อาหารแมวโตเลี้ยงในบ้าน ชนิดเม็ด (INDOOR) 4KG.</h3>
+                </div>
+                <p class="prompt-light text-xl align-middle text-center">1,199 บาท</p>
+                <!--button cart and detail-->
+                <div class="flex flex-row gap-8 justify-center flex-wrap pb-4">
+                    <a onclick="addToCart('อาหารแมวโตเลี้ยงในบ้าน ชนิดเม็ด (INDOOR) 4KG.', 1199, '../img/indoor.jpg')" class="box-button m-2 p-4 rounded-full border-2 hover:cursor-pointer">
+                        <span class="svg-container">
+                            <svg class="w-[24px] h-[24px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4m3-2 .917 11.923A1 1 0 0 1 17.92 21H6.08a1 1 0 0 1-.997-1.077L6 8h12Z"/>
+                              </svg>
+                        </span>
+                    </a>
+
+                    <div class="my-auto">
+                        <span class="prompt-light text-xl">                        
+                            <a onclick="sendToProduct('อาหารแมวโตเลี้ยงในบ้าน ชนิดเม็ด (INDOOR) 4KG.', 1199, '../img/indoor.jpg')" class="btn_detail hover:underline hover:cursor-pointer hover:text-red-500 duration-300 pr-">ดูสินค้า
+                                <svg class="w-[24px] h-[24px] inline-block svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+                                  </svg>
+                            </a>
+                        </span>
+                    </div>            
+                </div>
+            </div>
+        </div>
+
+        <div class="product col-span-1 justify-items-center mx-auto" data-name="อาหารลูกแมวพันธุ์บริติช ชอร์ตแฮร์ ชนิดเม็ด (BRITISH SHORTHAIR KITTEN) 4KG." data-price="2990">
+            <div class="box prompt-light rounded-xl">
+                <div class="flex flex-row justify-center">
+                    <div class="img">                    
+                        <img src="../img/shorthair-kitten.png" alt="Product 2" class="m-auto">
+                    </div>
+                </div>
+                <div class="product_name">
+                    <h3 class="prompt-light px-2 text-center lg:text-sm xl:text-base">อาหารลูกแมวพันธุ์บริติช ชอร์ตแฮร์ ชนิดเม็ด (BRITISH SHORTHAIR KITTEN) 4KG.</h3>
+                </div>
+                <p class="prompt-light text-xl align-middle text-center">2,990 บาท</p>
+                <!--button cart and detail-->
+                <div class="flex flex-row gap-8 justify-center flex-wrap pb-4">
+                    <a onclick="addToCart('อาหารลูกแมวพันธุ์บริติช ชอร์ตแฮร์ ชนิดเม็ด (BRITISH SHORTHAIR KITTEN) 4KG.', 2990, '../img/shorthair-kitten.png')" class="box-button m-2 p-4 rounded-full border-2 hover:cursor-pointer">
+                        <span class="svg-container">
+                            <svg class="w-[24px] h-[24px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4m3-2 .917 11.923A1 1 0 0 1 17.92 21H6.08a1 1 0 0 1-.997-1.077L6 8h12Z"/>
+                              </svg>
+                        </span>
+                    </a>
+
+                    <div class="my-auto">
+                        <span class="prompt-light text-xl">                        
+                            <a onclick="sendToProduct('อาหารลูกแมวพันธุ์บริติช ชอร์ตแฮร์ ชนิดเม็ด (BRITISH SHORTHAIR KITTEN) 4KG.', 2990, '../img/shorthair-kitten.png')" class="btn_detail hover:underline hover:cursor-pointer hover:text-red-500 duration-300 pr-">ดูสินค้า
+                                <svg class="w-[24px] h-[24px] inline-block svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+                                  </svg>
+                            </a>
+                        </span>
+                    </div>            
+                </div>
+            </div>
+        </div>
+
+        <div class="product col-span-1 justify-items-center mx-auto" data-name="อาหารแมวโตพันธุ์เปอร์เซีย ชนิดเม็ด (PERSIAN ADULT) 4KG." data-price="1490">
+            <div class="box prompt-light rounded-xl">
+                <div class="flex flex-row justify-center">
+                    <div class="img">                    
+                        <img src="../img/persian-adult.jpg" alt="Product 2" class="m-auto">
+                    </div>
+                </div>
+                <div class="product_name">
+                    <h3 class="prompt-light px-2 text-center">อาหารแมวโตพันธุ์เปอร์เซีย ชนิดเม็ด (PERSIAN ADULT) 4KG.</h3>
+                </div>
+                <p class="prompt-light text-xl align-middle text-center">1,490 บาท</p>
+                <!--button cart and detail-->
+                <div class="flex flex-row gap-8 justify-center flex-wrap pb-4">
+                    <a onclick="addToCart('อาหารแมวโตพันธุ์เปอร์เซีย ชนิดเม็ด (PERSIAN ADULT) 4KG.', 1490, '../img/persian-adult.jpg')" class="box-button m-2 p-4 rounded-full border-2 hover:cursor-pointer">
+                        <span class="svg-container">
+                            <svg class="w-[24px] h-[24px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4m3-2 .917 11.923A1 1 0 0 1 17.92 21H6.08a1 1 0 0 1-.997-1.077L6 8h12Z"/>
+                              </svg>
+                        </span>
+                    </a>
+
+                    <div class="my-auto">
+                        <span class="prompt-light text-xl">                        
+                            <a onclick="sendToProduct('อาหารแมวโตพันธุ์เปอร์เซีย ชนิดเม็ด (PERSIAN ADULT) 4KG.', 1490, '../img/persian-adult.jpg')" class="btn_detail hover:underline hover:cursor-pointer hover:text-red-500 duration-300 pr-">ดูสินค้า
+                                <svg class="w-[24px] h-[24px] inline-block svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+                                  </svg>
+                            </a>
+                        </span>
+                    </div>            
+                </div>
+            </div>
+        </div>
+
+        <div class="product col-span-1 justify-items-center mx-auto" data-name="อาหารแมวโตกินยาก ชนิดเม็ด (AROMA EXIGENT) 4KG." data-price="1260">
+            <div class="box prompt-light rounded-xl">
+                <div class="flex flex-row justify-center">
+                    <div class="img">                    
+                        <img src="../img/sterilised.jpg" alt="Product 2" class="m-auto">
+                    </div>
+                </div>
+                <div class="product_name">
+                    <h3 class="prompt-light px-2 text-center">อาหารแมวโตกินยาก ชนิดเม็ด (AROMA EXIGENT) 4KG.</h3>
+                </div>
+                <p class="prompt-light text-xl align-middle text-center">1,260 บาท</p>
+                <!--button cart and detail-->
+                <div class="flex flex-row gap-8 justify-center flex-wrap pb-4">
+                    <a onclick="addToCart('อาหารแมวโตกินยาก ชนิดเม็ด (AROMA EXIGENT) 4KG.', 1260, '../img/sterilised.jpg')" class="box-button m-2 p-4 rounded-full border-2 hover:cursor-pointer">
+                        <span class="svg-container">
+                            <svg class="w-[24px] h-[24px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4m3-2 .917 11.923A1 1 0 0 1 17.92 21H6.08a1 1 0 0 1-.997-1.077L6 8h12Z"/>
+                              </svg>
+                        </span>
+                    </a>
+
+                    <div class="my-auto">
+                        <span class="prompt-light text-xl">                        
+                            <a onclick="sendToProduct('อาหารแมวโตกินยาก ชนิดเม็ด (AROMA EXIGENT) 4KG.', 1260, '../img/sterilised.jpg')" class="btn_detail hover:underline hover:cursor-pointer hover:text-red-500 duration-300 pr-">ดูสินค้า
+                                <svg class="w-[24px] h-[24px] inline-block svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+                                  </svg>
+                            </a>
+                        </span>
+                    </div>            
+                </div>
+            </div>
+        </div>
+
+        <div class="product col-span-1 justify-items-center mx-auto" data-name="อาหารสุนัขโต พันธุ์ใหญ่ อ้วนง่าย ชนิดเม็ด (MAXI LIGHT WEIGHT CARE) 12KG." data-price="2560">
+            <div class="box prompt-light rounded-xl">
+                <div class="flex flex-row justify-center">
+                    <div class="img">                    
+                        <img src="../img/packshot.jpg" alt="Product 2" class="m-auto">
+                    </div>
+                </div>
+                <div class="product_name">
+                    <h3 class="prompt-light px-2 text-center">อาหารสุนัขโต พันธุ์ใหญ่ อ้วนง่าย ชนิดเม็ด (MAXI LIGHT WEIGHT CARE) 12KG.</h3>
+                </div>
+                <p class="prompt-light text-xl align-middle text-center">2,560 บาท</p>
+                <!--button cart and detail-->
+                <div class="flex flex-row gap-8 justify-center flex-wrap pb-4">
+                    <a onclick="addToCart('อาหารสุนัขโต พันธุ์ใหญ่ อ้วนง่าย ชนิดเม็ด (MAXI LIGHT WEIGHT CARE) 12KG.', 2560, '../img/packshot.jpg')" class="box-button m-2 p-4 rounded-full border-2 hover:cursor-pointer">
+                        <span class="svg-container">
+                            <svg class="w-[24px] h-[24px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4m3-2 .917 11.923A1 1 0 0 1 17.92 21H6.08a1 1 0 0 1-.997-1.077L6 8h12Z"/>
+                              </svg>
+                        </span>
+                    </a>
+
+                    <div class="my-auto">
+                        <span class="prompt-light text-xl">                        
+                            <a onclick="sendToProduct('อาหารสุนัขโต พันธุ์ใหญ่ อ้วนง่าย ชนิดเม็ด (MAXI LIGHT WEIGHT CARE) 12KG.', 2560, '../img/packshot.jpg')" class="btn_detail hover:underline hover:cursor-pointer hover:text-red-500 duration-300 pr-">ดูสินค้า
+                                <svg class="w-[24px] h-[24px] inline-block svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+                                  </svg>
+                            </a>
+                        </span>
+                    </div>            
+                </div>
+            </div>
+        </div>
+
+        <div class="product col-span-1 justify-items-center mx-auto" data-name="อาหารสุนัขโต พันธุ์ปอมเมอเรเนียน ชนิดเม็ด (POMERANIAN ADULT) 3KG." data-price="1490">
+            <div class="box prompt-light rounded-xl">
+                <div class="flex flex-row justify-center">
+                    <div class="img">                    
+                        <img src="../img/pomeranian.png" alt="Product 2" class="m-auto">
+                    </div>
+                </div>
+                <div class="product_name">
+                    <h3 class="prompt-light px-2 text-center">อาหารสุนัขโต พันธุ์ปอมเมอเรเนียน ชนิดเม็ด (POMERANIAN ADULT) 3KG.</h3>
+                </div>
+                <p class="prompt-light text-xl align-middle text-center">1,490 บาท</p>
+                <!--button cart and detail-->
+                <div class="flex flex-row gap-8 justify-center flex-wrap pb-4">
+                    <a onclick="addToCart('อาหารสุนัขโต พันธุ์ปอมเมอเรเนียน ชนิดเม็ด (POMERANIAN ADULT) 3KG.', 1490, '../img/pomeranian.png')" class="box-button m-2 p-4 rounded-full border-2 hover:cursor-pointer">
+                        <span class="svg-container">
+                            <svg class="w-[24px] h-[24px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4m3-2 .917 11.923A1 1 0 0 1 17.92 21H6.08a1 1 0 0 1-.997-1.077L6 8h12Z"/>
+                              </svg>
+                        </span>
+                    </a>
+
+                    <div class="my-auto">
+                        <span class="prompt-light text-xl">                        
+                            <a onclick="sendToProduct('อาหารสุนัขโต พันธุ์ปอมเมอเรเนียน ชนิดเม็ด (POMERANIAN ADULT) 3KG.', 1490, '../img/pomeranian.png')" class="btn_detail hover:underline hover:cursor-pointer hover:text-red-500 duration-300 pr-">ดูสินค้า
+                                <svg class="w-[24px] h-[24px] inline-block svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+                                  </svg>
+                            </a>
+                        </span>
+                    </div>            
+                </div>
+            </div>
+        </div>
+
+        <div class="product col-span-1 justify-items-center mx-auto" data-name="อาหารสุนัขโต พันธุ์กลาง ชนิดเม็ด (MEDIUM ADULT) 4KG." data-price="899">
+            <div class="box prompt-light rounded-xl">
+                <div class="flex flex-row justify-center">
+                    <div class="img">                    
+                        <img src="../img/packshot-med.png" alt="Product 2" class="m-auto">
+                    </div>
+                </div>
+                <div class="product_name">
+                    <h3 class="prompt-light px-2 text-center">อาหารสุนัขโต พันธุ์กลาง ชนิดเม็ด (MEDIUM ADULT) 4KG.</h3>
+                </div>
+                <p class="prompt-light text-xl align-middle text-center">899 บาท</p>
+                <!--button cart and detail-->
+                <div class="flex flex-row gap-8 justify-center flex-wrap pb-4">
+                    <a onclick="addToCart('อาหารสุนัขโต พันธุ์กลาง ชนิดเม็ด (MEDIUM ADULT) 4KG.', 899, '../img/packshot-med.png')" class="box-button m-2 p-4 rounded-full border-2 hover:cursor-pointer">
+                        <span class="svg-container">
+                            <svg class="w-[24px] h-[24px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4m3-2 .917 11.923A1 1 0 0 1 17.92 21H6.08a1 1 0 0 1-.997-1.077L6 8h12Z"/>
+                              </svg>
+                        </span>
+                    </a>
+
+                    <div class="my-auto">
+                        <span class="prompt-light text-xl">                        
+                            <a onclick="sendToProduct('อาหารสุนัขโต พันธุ์กลาง ชนิดเม็ด (MEDIUM ADULT) 4KG.', 899, '../img/packshot-med.png')" class="btn_detail hover:underline hover:cursor-pointer hover:text-red-500 duration-300 pr-">ดูสินค้า
+                                <svg class="w-[24px] h-[24px] inline-block svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+                                  </svg>
+                            </a>
+                        </span>
+                    </div>            
+                </div>
+            </div>
+        </div>
+
+        <div class="product col-span-1 justify-items-center mx-auto" data-name="อาหารสุนัขโต พันธุ์ปั๊ก ชนิดเม็ด (PUG ADULT) 3KG." data-price="1150">
+            <div class="box prompt-light rounded-xl">
+                <div class="flex flex-row justify-center">
+                    <div class="img">                    
+                        <img src="../img/pug.png" alt="Product 2" class="m-auto">
+                    </div>
+                </div>
+                <div class="product_name">
+                    <h3 class="prompt-light px-2 text-center">อาหารสุนัขโต พันธุ์ปั๊ก ชนิดเม็ด (PUG ADULT) 3KG.</h3>
+                </div>
+                <p class="prompt-light text-xl align-middle text-center">1,150 บาท</p>
+                <!--button cart and detail-->
+                <div class="flex flex-row gap-8 justify-center flex-wrap pb-4">
+                    <a onclick="addToCart('อาหารสุนัขโต พันธุ์ปั๊ก ชนิดเม็ด (PUG ADULT) 3KG.', 1150, '../img/pug.png')" class="box-button m-2 p-4 rounded-full border-2 hover:cursor-pointer">
+                        <span class="svg-container">
+                            <svg class="w-[24px] h-[24px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4m3-2 .917 11.923A1 1 0 0 1 17.92 21H6.08a1 1 0 0 1-.997-1.077L6 8h12Z"/>
+                              </svg>
+                        </span>
+                    </a>
+
+                    <div class="my-auto">
+                        <span class="prompt-light text-xl">                        
+                            <a onclick="sendToProduct('อาหารสุนัขโต พันธุ์ปั๊ก ชนิดเม็ด (PUG ADULT) 3KG.', 1150, '../img/pug.png')" class="btn_detail hover:underline hover:cursor-pointer hover:text-red-500 duration-300 pr-">ดูสินค้า
+                                <svg class="w-[24px] h-[24px] inline-block svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
+                                  </svg>
+                            </a>
+                        </span>
+                    </div>            
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
